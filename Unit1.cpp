@@ -134,6 +134,7 @@ void __fastcall TMainForm::TrayIcon1Click(TObject *Sender)
 {
 MainForm->Show();
 TrayIcon1->Visible = false;
+Application->Restore();
 }
 //---------------------------------------------------------------------------
 
@@ -141,7 +142,7 @@ TrayIcon1->Visible = false;
 void __fastcall TMainForm::ApplicationEvents1Minimize(TObject *Sender)
 {
 TrayIcon1->Visible = true;
-MainForm->Hide();        
+MainForm->Hide();
 }
 //---------------------------------------------------------------------------
 
