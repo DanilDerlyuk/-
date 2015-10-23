@@ -17,6 +17,7 @@
 #include <jpeg.hpp>
 #include <Dialogs.hpp>
 #include "trayicon.h"
+#include <AppEvnts.hpp>
 //---------------------------------------------------------------------------
 class TMainForm : public TForm
 {
@@ -50,6 +51,7 @@ __published:	// IDE-managed Components
         TMenuItem *N12;
         TOpenDialog *OpenDialog1;
         TTrayIcon *TrayIcon1;
+        TApplicationEvents *ApplicationEvents1;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall MonthCalendar1Click(TObject *Sender);
@@ -65,8 +67,8 @@ __published:	// IDE-managed Components
         void __fastcall N3Click(TObject *Sender);
         void __fastcall N14Click(TObject *Sender);
         void __fastcall N12Click(TObject *Sender);
-        void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
         void __fastcall TrayIcon1Click(TObject *Sender);
+        void __fastcall ApplicationEvents1Minimize(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TMainForm(TComponent* Owner);

@@ -84,7 +84,6 @@ RouteSheet->Show();
 
 void __fastcall TMainForm::N7Click(TObject *Sender)  //Выход
 {
-Tag = 1;
 MainForm->Close();
 }
 
@@ -131,15 +130,6 @@ PrintRouteSheet->QuickRep1->QRPrinter->Preview();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMainForm::FormCloseQuery(TObject *Sender, bool &CanClose)
-{
-CanClose = Tag;
-TrayIcon1->Visible = true;
-MainForm->Hide();
-}
-
-//---------------------------------------------------------------------------
-
 void __fastcall TMainForm::TrayIcon1Click(TObject *Sender)
 {
 MainForm->Show();
@@ -147,4 +137,12 @@ TrayIcon1->Visible = false;
 }
 //---------------------------------------------------------------------------
 
+
+
+void __fastcall TMainForm::ApplicationEvents1Minimize(TObject *Sender)
+{
+TrayIcon1->Visible = true;
+MainForm->Hide();        
+}
+//---------------------------------------------------------------------------
 
