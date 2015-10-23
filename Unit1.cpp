@@ -15,13 +15,13 @@
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "trayicon"
 #pragma resource "*.dfm"
 TMainForm *MainForm;
 //---------------------------------------------------------------------------
 __fastcall TMainForm::TMainForm(TComponent* Owner)
         : TForm(Owner)
-{
-}
+{}
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::FormCreate(TObject *Sender)
 {
@@ -84,6 +84,7 @@ RouteSheet->Show();
 
 void __fastcall TMainForm::N7Click(TObject *Sender)  //Выход
 {
+Tag = 1;
 MainForm->Close();
 }
 
@@ -129,4 +130,21 @@ PrintRouteSheet->QuickRep1->QRPrinter->Load(FileNameRep);
 PrintRouteSheet->QuickRep1->QRPrinter->Preview();
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TMainForm::FormCloseQuery(TObject *Sender, bool &CanClose)
+{
+CanClose = Tag;
+TrayIcon1->Visible = true;
+MainForm->Hide();
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::TrayIcon1Click(TObject *Sender)
+{
+MainForm->Show();
+TrayIcon1->Visible = false;
+}
+//---------------------------------------------------------------------------
+
 
