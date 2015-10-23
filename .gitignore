@@ -3,7 +3,7 @@
 *.lo
 *.o
 *.obj
-*.bpr
+
 
 # Precompiled Headers
 *.gch
@@ -27,3 +27,16 @@
 *.exe
 *.out
 *.app
+
+# C++ Builder
+*.bpr
+*.res
+*.tds
+*.ddp
+*.dfm
+*.~bpr
+*.~cpp
+*.~ddp
+*.~dfm
+*.~h
+*.doc
