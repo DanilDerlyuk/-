@@ -135,6 +135,7 @@ void __fastcall TMainForm::TrayIcon1Click(TObject *Sender)
 MainForm->Show();
 TrayIcon1->Visible = false;
 Application->Restore();
+SetForegroundWindow(Handle);
 }
 //---------------------------------------------------------------------------
 
