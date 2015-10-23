@@ -52,6 +52,9 @@ __published:	// IDE-managed Components
         TOpenDialog *OpenDialog1;
         TTrayIcon *TrayIcon1;
         TApplicationEvents *ApplicationEvents1;
+        TPopupMenu *TrayMenu;
+        TMenuItem *N13;
+        TMenuItem *N15;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall MonthCalendar1Click(TObject *Sender);
@@ -69,6 +72,9 @@ __published:	// IDE-managed Components
         void __fastcall N12Click(TObject *Sender);
         void __fastcall TrayIcon1Click(TObject *Sender);
         void __fastcall ApplicationEvents1Minimize(TObject *Sender);
+        void __fastcall N13Click(TObject *Sender);
+        void __fastcall N15Click(TObject *Sender);
+
 private:	// User declarations
 public:		// User declarations
         __fastcall TMainForm(TComponent* Owner);

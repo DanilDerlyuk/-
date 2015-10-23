@@ -138,11 +138,22 @@ TrayIcon1->Visible = false;
 //---------------------------------------------------------------------------
 
 
-
 void __fastcall TMainForm::ApplicationEvents1Minimize(TObject *Sender)
 {
 TrayIcon1->Visible = true;
 MainForm->Hide();        
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::N13Click(TObject *Sender)
+{
+MainForm->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::N15Click(TObject *Sender)
+{
+AboutBox->Show();        
 }
 //---------------------------------------------------------------------------
 
